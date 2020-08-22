@@ -13,9 +13,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import javax.validation.Valid;
 
-/**
- * Created by jt on 6/19/17.
- */
+
 @Slf4j
 @Controller
 public class RecipeController {
@@ -38,7 +36,6 @@ public class RecipeController {
     @GetMapping("recipe/new")
     public String newRecipe(Model model){
         model.addAttribute("recipe", new RecipeCommand());
-
         return "recipe/recipeform";
     }
 

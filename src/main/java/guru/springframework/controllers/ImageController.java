@@ -1,6 +1,7 @@
 package guru.springframework.controllers;
 
 import guru.springframework.commands.RecipeCommand;
+import guru.springframework.domain.Category;
 import guru.springframework.services.ImageService;
 import guru.springframework.services.RecipeService;
 import org.apache.tomcat.util.http.fileupload.IOUtils;
@@ -17,9 +18,7 @@ import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 
-/**
- * Created by jt on 7/3/17.
- */
+
 @Controller
 public class ImageController {
 
@@ -34,7 +33,6 @@ public class ImageController {
     @GetMapping("recipe/{id}/image")
     public String showUploadForm(@PathVariable String id, Model model){
         model.addAttribute("recipe", recipeService.findCommandById(id));
-
         return "recipe/imageuploadform";
     }
 
